@@ -13,9 +13,9 @@
   --sidebar-w:224px;
 }
 [data-theme="light"] {
-  --bg-primary:#f0f0f0; --bg-secondary:#ffffff; --bg-card:#ffffff; --bg-card-hover:#f7f7f7;
-  --text-primary:#111111; --text-secondary:#444444; --text-muted:#888888;
-  --border-color:#e0e0e0; --card-shadow:0 4px 20px rgba(0,0,0,.1);
+  --bg-primary:#efe8dc; --bg-secondary:#f8f2e8; --bg-card:#fdf9f3; --bg-card-hover:#f5ede0;
+  --text-primary:#2b1c0e; --text-secondary:#5a3e2b; --text-muted:#9c7b60;
+  --border-color:#d4c4ae; --card-shadow:0 4px 20px rgba(100,60,20,.13);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -403,6 +403,46 @@ header{position:sticky;top:0;z-index:200;background:var(--bg-secondary);border-b
   .mob-fab:active{transform:scale(.9);box-shadow:0 2px 10px rgba(235,0,27,.4);}
 }
 
+/* ─── ORG CHART ─── */
+.org-chart{padding:4px 0 24px;}
+.org-level-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.8px;color:var(--text-muted);margin:22px 0 10px;padding:0 2px;display:flex;align-items:center;gap:8px;}
+.org-level-label::after{content:'';flex:1;height:1px;background:var(--border-color);}
+.org-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:4px;}
+.org-node{background:var(--bg-card);border:1px solid var(--border-color);border-radius:14px;padding:14px 12px 12px;width:160px;min-width:140px;max-width:180px;cursor:pointer;transition:all .2s;position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:var(--card-shadow);}
+.org-node:hover{transform:translateY(-3px);border-color:rgba(235,0,27,.5);box-shadow:0 8px 28px rgba(0,0,0,.25);}
+.org-node.ceo-node{width:200px;max-width:220px;border-width:2px;border-color:var(--accent-red);background:linear-gradient(135deg,rgba(235,0,27,.06),rgba(247,158,27,.06));}
+.org-node.expanded{border-color:var(--accent-orange);background:rgba(247,158,27,.06);}
+.org-av{width:60px;height:60px;border-radius:50%;overflow:hidden;border:3px solid var(--border-color);margin-bottom:9px;flex-shrink:0;transition:border-color .2s;}
+.org-node:hover .org-av,.org-node.expanded .org-av{border-color:var(--accent-red);}
+.org-av-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;}
+.org-node.ceo-node .org-av{width:72px;height:72px;border-color:var(--accent-red);}
+.org-name{font-size:12px;font-weight:800;color:var(--text-primary);line-height:1.3;margin-bottom:3px;}
+.org-title{font-size:9.5px;color:var(--text-muted);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.org-level-badge{font-size:8.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-top:6px;}
+.org-level-badge.ceo{background:linear-gradient(90deg,#EB001B,#F79E1B);color:#fff;}
+.org-level-badge.cxo{background:rgba(235,0,27,.12);color:var(--accent-red);}
+.org-level-badge.evp{background:rgba(247,158,27,.14);color:#c47a00;}
+.org-level-badge.svp{background:rgba(39,174,96,.12);color:#1a7a42;}
+.org-expand-btn{position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;background:var(--accent-red);color:#fff;border:2px solid var(--bg-card);font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center;font-weight:800;z-index:2;transition:background .2s,transform .3s;}
+.org-expand-btn.open{background:var(--accent-orange);transform:translateX(-50%) rotate(45deg);}
+.org-children{margin-top:16px;padding:16px 14px 12px;background:rgba(235,0,27,.03);border:1px dashed var(--border-color);border-radius:12px;display:none;}
+.org-children.open{display:block;}
+.org-children-row{display:flex;flex-wrap:wrap;gap:10px;}
+.org-child-node{background:var(--bg-card);border:1px solid var(--border-color);border-radius:10px;padding:10px 10px 8px;width:150px;min-width:130px;cursor:pointer;transition:all .18s;position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.1);}
+.org-child-node:hover{border-color:rgba(235,0,27,.5);transform:translateY(-2px);}
+.org-child-node.expanded{border-color:var(--accent-orange);}
+.org-child-av{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--border-color);margin-bottom:7px;flex-shrink:0;}
+.org-child-av-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;}
+.org-child-name{font-size:11px;font-weight:800;color:var(--text-primary);line-height:1.3;margin-bottom:2px;}
+.org-child-title{font-size:9px;color:var(--text-muted);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.org-child-badge{font-size:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:1px 5px;border-radius:3px;margin-top:4px;}
+.org-news-count{font-size:9px;color:var(--accent-red);font-weight:700;margin-top:4px;}
+@media(max-width:768px){
+  .org-node{width:130px;min-width:110px;padding:10px 8px;}
+  .org-child-node{width:120px;min-width:100px;}
+  .org-row,.org-children-row{gap:8px;}
+}
+
 @media(max-width:420px){
   .stat-card{min-width:calc(50% - 4px);}
   .leader-card{padding:12px 8px;}
@@ -443,7 +483,8 @@ header{position:sticky;top:0;z-index:200;background:var(--bg-secondary);border-b
     <div class="sb-section">
       <div class="sb-label">Views</div>
       <div class="sb-item active" onclick="switchView('news',this)"><span class="sb-icon">📰</span>All News<span class="sb-badge" id="sbAllCount">0</span></div>
-      <div class="sb-item" onclick="switchView('leaders',this)"><span class="sb-icon">👥</span>Leaders<span class="sb-badge" id="sbLdrCount">0</span></div>
+      <div class="sb-item" onclick="switchView('org',this)"><span class="sb-icon">🏢</span>Org Chart</div>
+      <div class="sb-item" onclick="switchView('leaders',this)"><span class="sb-icon">👥</span>View Articles by Leaders<span class="sb-badge" id="sbLdrCount">0</span></div>
       <div class="sb-item" onclick="switchView('analytics',this)"><span class="sb-icon">📊</span>Analytics</div>
       <div class="sb-item" onclick="switchView('bets',this)"><span class="sb-icon">🎲</span>Big Bets 2026</div>
     </div>
@@ -457,7 +498,8 @@ header{position:sticky;top:0;z-index:200;background:var(--bg-secondary);border-b
   <main class="content">
     <div class="view-tabs">
       <button class="view-tab active" data-view="news" onclick="switchView('news',null,this)">📰 News Feed</button>
-      <button class="view-tab" data-view="leaders" onclick="switchView('leaders',null,this)">👥 Leaders</button>
+      <button class="view-tab" data-view="org" onclick="switchView('org',null,this)">🏢 Org Chart</button>
+      <button class="view-tab" data-view="leaders" onclick="switchView('leaders',null,this)">👥 View Articles by Leaders</button>
       <button class="view-tab" data-view="analytics" onclick="switchView('analytics',null,this)">📊 Analytics</button>
       <button class="view-tab" data-view="bets" onclick="switchView('bets',null,this)">🎲 Big Bets 2026</button>
     </div>
@@ -532,6 +574,12 @@ header{position:sticky;top:0;z-index:200;background:var(--bg-secondary);border-b
       <p style="font-size:13px;color:var(--text-muted);margin-bottom:18px">Strategic bets shaping Mastercard's future — each mapped to accountable leaders. Click a leader avatar to filter their news.</p>
       <div class="bb-grid" id="bbGrid"></div>
     </div>
+    <!-- ORG CHART VIEW -->
+    <div class="view" id="orgView">
+      <div class="org-chart" id="orgContent">
+        <div style="text-align:center;padding:40px;color:var(--text-muted)">Loading org chart…</div>
+      </div>
+    </div>
   </main>
 </div>
 
@@ -548,7 +596,8 @@ header{position:sticky;top:0;z-index:200;background:var(--bg-secondary);border-b
   <div class="sb-section">
     <div class="sb-label">Views</div>
     <div class="sb-item" onclick="switchView('news',this);closeMobileDrawer()"><span class="sb-icon">📰</span>All News<span class="sb-badge" id="mobSbAllCount"></span></div>
-    <div class="sb-item" onclick="switchView('leaders',this);closeMobileDrawer()"><span class="sb-icon">👥</span>Leaders<span class="sb-badge" id="mobSbLdrCount"></span></div>
+    <div class="sb-item" onclick="switchView('org',this);closeMobileDrawer()"><span class="sb-icon">🏢</span>Org Chart</div>
+    <div class="sb-item" onclick="switchView('leaders',this);closeMobileDrawer()"><span class="sb-icon">👥</span>View Articles by Leaders<span class="sb-badge" id="mobSbLdrCount"></span></div>
     <div class="sb-item" onclick="switchView('analytics',this);closeMobileDrawer()"><span class="sb-icon">📊</span>Analytics</div>
     <div class="sb-item" onclick="switchView('bets',this);closeMobileDrawer()"><span class="sb-icon">🎲</span>Big Bets 2026</div>
   </div>
@@ -569,7 +618,7 @@ header{position:sticky;top:0;z-index:200;background:var(--bg-secondary);border-b
     <span class="bn-icon">📰</span>News
   </button>
   <button class="bn-item" id="bnLeaders" onclick="switchView('leaders',null,null);updateBottomNav('leaders')">
-    <span class="bn-icon">👥</span>Leaders
+    <span class="bn-icon">👥</span>Articles
   </button>
   <button class="bn-item" id="bnAnalytics" onclick="switchView('analytics',null,null);updateBottomNav('analytics')">
     <span class="bn-icon">📊</span>Analytics
@@ -1846,19 +1895,19 @@ function saveLeaderEdits() {
   ldr.photo = document.getElementById('lmPhoto').value.trim();
   ldr.title = document.getElementById('lmTitle').value.trim();
   ldr.color = document.getElementById('lmColor').value;
-  save(); closeLeaderModal(); renderLeaders(); toast('Leader updated','success');
+  save(); closeLeaderModal(); renderLeaders(); orgChartRefreshIfVisible(); toast('Leader updated','success');
 }
 function markDeparted() {
   const ldr=leadersData.find(l=>l.id===leaderModalId); if(!ldr) return;
   const note = document.getElementById('lmDepNote').value.trim();
   ldr.active = false;
   ldr.departureNote = note||`Departed ${new Date().toLocaleDateString('en-US',{month:'short',year:'numeric'})}`;
-  save(); closeLeaderModal(); renderLeaders(); toast(`${ldr.name} marked as departed`);
+  save(); closeLeaderModal(); renderLeaders(); orgChartRefreshIfVisible(); toast(`${ldr.name} marked as departed`);
 }
 function restoreLeader() {
   const ldr=leadersData.find(l=>l.id===leaderModalId); if(!ldr) return;
   ldr.active=true; ldr.departureNote=null;
-  save(); closeLeaderModal(); renderLeaders(); toast(`${ldr.name} restored as active`,'success');
+  save(); closeLeaderModal(); renderLeaders(); orgChartRefreshIfVisible(); toast(`${ldr.name} restored as active`,'success');
 }
 
 // ── Add new leader ──
@@ -1887,7 +1936,7 @@ function saveNewLeader() {
     active: true,
   };
   leadersData.push(newLdr);
-  save(); closeAddLeaderModal(); renderLeaders(); renderPicker(); toast(`${name} added as a leader`,'success');
+  save(); closeAddLeaderModal(); renderLeaders(); renderPicker(); orgChartRefreshIfVisible(); toast(`${name} added as a leader`,'success');
 }
 
 // ══════════════════════════════════════════════
@@ -1953,13 +2002,14 @@ function switchView(v, sbEl, tabEl) {
   else { const t=document.querySelector(`.view-tab[data-view="${v}"]`); if(t) t.classList.add('active'); }
   if(v==='analytics') renderAnalytics();
   if(v==='bets') renderBigBets();
+  if(v==='org') renderOrgChart();
   if(v==='leaders') { renderLeaders(); document.getElementById('ldrNewsSection').style.display='none'; document.getElementById('leadersGrid').style.display='grid'; }
   if(searchQ || activeCat || activeLeader) updateSearchInfo();
   // Sync bottom nav
   updateBottomNav(v);
   // Show/hide mobile cat bar only on news view
   const catBar = document.getElementById('mobCatBar');
-  if (catBar) catBar.style.display = (v==='news') ? 'flex' : 'none';
+  if (catBar) catBar.style.display = (v==='news') ? '' : 'none';
 }
 
 // ══════════════════════════════════════════════
@@ -1988,7 +2038,7 @@ function importData(e) {
     const d=JSON.parse(ev.target.result);
     if(d.news) newsData=d.news;
     if(d.leaders) leadersData=d.leaders;
-    save(); renderSidebar(); renderLeaders(); renderNews(); updateStats();
+    save(); renderSidebar(); renderLeaders(); renderNews(); updateStats(); orgChartRefreshIfVisible();
     toast(`Imported ${d.news?d.news.length:0} articles and ${d.leaders?d.leaders.length:0} leaders`,'success');
     document.getElementById('ieModal').style.display='none';
   } catch(err){ toast('Invalid JSON file'); }};
@@ -2000,7 +2050,7 @@ function resetToSample() {
   newsData=JSON.parse(JSON.stringify(DAILY_NEWS_DATA));
   leadersData=JSON.parse(JSON.stringify(LEADERS_SEED));
   bigBetsData=JSON.parse(JSON.stringify(BIG_BETS_SEED));
-  save(); renderSidebar(); renderLeaders(); renderNews(); updateStats();
+  save(); renderSidebar(); renderLeaders(); renderNews(); updateStats(); orgChartRefreshIfVisible();
   toast('Reset to sample data','success');
   document.getElementById('ieModal').style.display='none';
 }
@@ -2524,6 +2574,174 @@ function toggleMobileCat(catId, el) {
       if (i.textContent.includes(CATEGORIES.find(c=>c.id===activeCat)?.label||'')) i.classList.add('active');
     });
   }
+}
+
+// ══════════════════════════════════════════════
+//  ORG CHART
+// ══════════════════════════════════════════════
+// Called after any leadership data change — silently re-renders if org view is active
+function orgChartRefreshIfVisible() {
+  if (currentView === 'org') renderOrgChart();
+}
+// Parent map: childId -> parentId (null = CEO/root)
+const ORG_HIERARCHY = {
+  1:null,
+  // C-Suite / Presidents → CEO (1)
+  2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,15:1,22:1,23:1,24:1,28:1,29:1,31:1,32:1,33:1,36:1,37:1,40:1,
+  // → Craig Vosburg (2) — Chief Product Officer
+  11:2,14:2,19:2,20:2,35:2,43:2,44:2,45:2,46:2,47:2,
+  // → Ed McLaughlin (4) — President, Operations & Technology
+  16:4,17:4,18:4,21:4,52:4,51:4,
+  // → Raja Rajamannar (5) — Chief Marketing
+  13:5,62:5,
+  // → Timothy Murphy (6) — Chief HR
+  41:6,73:6,
+  // → Jorn Lambert (24) — Chief Digital Officer
+  38:24,42:24,67:24,
+  // → Richard Verma (37) — Chief Legal Officer
+  25:37,50:37,
+  // → Linda Kirkpatrick (28) — President, Americas
+  27:28,34:28,
+  // → Ling Hai (29) — President, Asia Pacific
+  26:29,79:29,
+  // → Mark Barnett (31) — President, Europe
+  30:31,48:31,64:31,68:31,75:31,76:31,78:31,
+  // → Pablo Fourez (33) — President, LAC
+  63:33,65:33,
+  // → Raj Seshadri (36) — President, Data & Services
+  10:36,39:36,54:36,
+  // → Shamina Singh (9) — President, Sustainability
+  12:9,53:9,60:9,
+  // → Greg Ulrich (8) — EVP, Strategy
+  // → Dimitrios Dosis (15)
+  // → John Levitsky (22)
+  66:22,72:22,
+  // → George Maddaloni (18) — EVP, Global Technology
+  55:18,
+  // → Jess Turner (20) — EVP, Open Banking
+  56:20,69:20,
+  // → Johan Gerber (21) — EVP, Security
+  57:21,59:21,
+  // → Annu Kannan (54) — EVP, AI & Data
+  58:54,
+  // → Justin Keaton (46) — EVP, Commercial Solutions
+  61:46,71:46,
+  // → Nirav Mehta (47)
+  // → CEO misc (no obvious parent)
+  49:1,70:1,74:1,
+};
+
+const ORG_LEVEL = {
+  1:'ceo',
+  2:'cxo',3:'cxo',4:'cxo',5:'cxo',6:'cxo',7:'cxo',8:'cxo',9:'cxo',15:'cxo',
+  22:'cxo',23:'cxo',24:'cxo',28:'cxo',29:'cxo',31:'cxo',32:'cxo',33:'cxo',36:'cxo',37:'cxo',40:'cxo',
+};
+
+function getOrgLevel(id) {
+  if (ORG_LEVEL[id]) return ORG_LEVEL[id];
+  const parentId = ORG_HIERARCHY[id];
+  if (!parentId) return 'cxo';
+  const parentLevel = getOrgLevel(parentId);
+  if (parentLevel === 'ceo' || parentLevel === 'cxo') return 'evp';
+  return 'svp';
+}
+
+function orgAvHTML(ldr, size) {
+  const s = size || 60;
+  if (ldr.photo) {
+    return `<img src="${ldr.photo}" style="width:100%;height:100%;object-fit:cover" onerror="this.parentNode.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:${Math.floor(s*0.28)}px;font-weight:800;color:#fff;background:linear-gradient(135deg,${ldr.color},${darken(ldr.color)})\'>${ldr.initials}</div>'">`;
+  }
+  return `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:${Math.floor(s*0.28)}px;font-weight:800;color:#fff;background:linear-gradient(135deg,${ldr.color},${darken(ldr.color)})">${ldr.initials}</div>`;
+}
+
+function getOrgChildren(parentId) {
+  return leadersData.filter(l => l.active && ORG_HIERARCHY[l.id] === parentId);
+}
+
+function orgNewsCount(ldrName) {
+  return newsData.filter(n => (n.leaders||[]).includes(ldrName)).length;
+}
+
+function renderOrgChart() {
+  const container = document.getElementById('orgContent');
+  if (!container) return;
+
+  // CEO
+  const ceo = leadersData.find(l => l.id === 1);
+  if (!ceo) { container.innerHTML = '<div style="padding:40px;text-align:center;color:var(--text-muted)">No CEO found in leaders data.</div>'; return; }
+
+  // Build children lookup
+  const cxoList = getOrgChildren(1).sort((a,b) => a.id - b.id);
+
+  let html = '<div class="org-chart">';
+
+  // ── CEO ──
+  const ceoNews = orgNewsCount(ceo.name);
+  html += `<div class="org-level-label">Chief Executive Officer</div>
+  <div class="org-row">
+    <div class="org-node ceo-node" style="cursor:default">
+      <div class="org-av" style="width:72px;height:72px">${orgAvHTML(ceo,72)}</div>
+      <div class="org-name">${ceo.name}</div>
+      <div class="org-title">${ceo.title}</div>
+      <div class="org-level-badge ceo">CEO</div>
+    </div>
+  </div>`;
+
+  // ── C-Suite / Presidents ──
+  html += `<div class="org-level-label">C-Suite &amp; Presidents — Direct Reports</div><div class="org-row">`;
+
+  cxoList.forEach(ldr => {
+    const evpChildren = getOrgChildren(ldr.id);
+    const hasChildren = evpChildren.length > 0;
+    const nc = orgNewsCount(ldr.name);
+    const nodeId = `orgNode_${ldr.id}`;
+    html += `<div style="display:flex;flex-direction:column;align-items:center">
+      <div class="org-node" id="${nodeId}" onclick="orgToggle(${ldr.id})">
+        <div class="org-av">${orgAvHTML(ldr,60)}</div>
+        <div class="org-name">${ldr.name}</div>
+        <div class="org-title">${ldr.title}</div>
+        <div class="org-level-badge cxo">${ldr.title.startsWith('President') ? 'President' : ldr.title.startsWith('Chief') ? 'C-Suite' : 'EVP'}</div>
+        ${hasChildren ? `<div class="org-expand-btn" id="orgBtn_${ldr.id}">+</div>` : ''}
+      </div>
+      ${hasChildren ? `<div class="org-children" id="orgChildren_${ldr.id}">
+        <div class="org-children-row">
+          ${evpChildren.map(evp => {
+            return `<div class="org-child-node" style="cursor:default" id="orgNode_${evp.id}">
+                <div class="org-child-av">${orgAvHTML(evp,44)}</div>
+                <div class="org-child-name">${evp.name}</div>
+                <div class="org-child-title">${evp.title}</div>
+                <div class="org-child-badge org-level-badge evp">EVP</div>
+              </div>`;
+          }).join('')}
+        </div>
+      </div>` : ''}
+    </div>`;
+  });
+
+  html += '</div>'; // close org-row
+
+  // Legend
+  html += `<div style="margin-top:28px;padding:14px 16px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:10px;display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+    <span style="font-size:11px;color:var(--text-muted);font-weight:700">LEGEND:</span>
+    <span class="org-level-badge ceo" style="font-size:10px">CEO</span>
+    <span class="org-level-badge cxo" style="font-size:10px">C-Suite / President</span>
+    <span class="org-level-badge evp" style="font-size:10px">EVP</span>
+    <span style="font-size:10px;color:var(--text-muted);margin-left:4px">Click <strong>+</strong> on a C-Suite card to expand their EVP direct reports</span>
+  </div>`;
+
+  html += '</div>'; // close org-chart
+  container.innerHTML = html;
+}
+
+function orgToggle(id) {
+  const childDiv = document.getElementById('orgChildren_' + id);
+  const btnDiv   = document.getElementById('orgBtn_' + id);
+  const node     = document.getElementById('orgNode_' + id);
+  if (!childDiv) return;
+  const isOpen = childDiv.classList.contains('open');
+  childDiv.classList.toggle('open', !isOpen);
+  if (btnDiv) btnDiv.classList.toggle('open', !isOpen);
+  if (node) node.classList.toggle('expanded', !isOpen);
 }
 
 // ── START ──
