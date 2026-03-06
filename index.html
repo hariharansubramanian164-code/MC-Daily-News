@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Mastercard Daily News</title>
 <style>
 :root {
@@ -466,6 +469,7 @@ header{position:sticky;top:0;z-index:200;background:var(--bg-secondary);border-b
   </div>
   <div class="hdr-actions">
     <div class="hdr-date" id="hdrDate"></div>
+    <div class="hdr-date" id="hdrVersion" title="Build version"></div>
     <button class="btn btn-primary" onclick="openAddModal()">＋ Add Article</button>
     <button class="btn btn-ghost" onclick="openImportExport()">⇅ Import/Export</button>
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle dark/light mode">🌙</button>
@@ -1177,6 +1181,7 @@ function init() {
   if (st === 'light') { isDark = false; document.documentElement.setAttribute('data-theme','light'); document.getElementById('themeBtn').textContent='☀️'; }
 
   document.getElementById('hdrDate').textContent = new Date().toLocaleDateString('en-US',{weekday:'short',year:'numeric',month:'short',day:'numeric'});
+  document.getElementById('hdrVersion').textContent = 'v2026-03-06.8';
 
   // Populate category selects (article form + bet form)
   const cs = document.getElementById('inCategory');
