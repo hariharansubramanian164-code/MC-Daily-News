@@ -575,7 +575,15 @@ header{position:sticky;top:0;z-index:200;background:var(--bg-secondary);border-b
           <button class="btn btn-primary" onclick="openBetModal()">＋ Add Big Bet</button>
         </div>
       </div>
-      <p style="font-size:13px;color:var(--text-muted);margin-bottom:18px">Strategic bets shaping Mastercard's future — each mapped to accountable leaders. Click a leader avatar to filter their news.</p>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px">Strategic bets shaping Mastercard's future — each mapped to accountable leaders. Click a leader avatar to filter their news.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:10px;align-items:center;">
+        <span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-right:4px;">Status Key:</span>
+        <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:linear-gradient(90deg,rgba(235,0,27,.15),rgba(247,158,27,.15));color:var(--accent-orange);border:1px solid rgba(247,158,27,.3);">🔥 Active — work is underway and on track</span>
+        <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(52,152,219,.12);color:#3498DB;border:1px solid rgba(52,152,219,.2);">⚡ In Progress — actively being built, key milestones in flight</span>
+        <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(52,152,219,.12);color:#3498DB;border:1px solid rgba(52,152,219,.2);">📋 Planned — scoped and funded, execution not yet started</span>
+        <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(46,204,113,.12);color:#27AE60;border:1px solid rgba(46,204,113,.2);">✅ Achieved — target KPI met or exceeded</span>
+        <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(231,76,60,.12);color:#E74C3C;border:1px solid rgba(231,76,60,.2);">⚠️ At Risk — behind schedule or facing blockers</span>
+      </div>
       <div class="bb-grid" id="bbGrid"></div>
     </div>
     <!-- INTELLIGENCE VIEW -->
@@ -584,7 +592,23 @@ header{position:sticky;top:0;z-index:200;background:var(--bg-secondary);border-b
         <h2 class="sec-title">Strategic Intelligence <span class="grad">Signals (SIS)</span></h2>
         <button class="btn btn-primary" onclick="openAddIntelModal()">＋ Add Signal</button>
       </div>
-      <p style="font-size:13px;color:var(--text-muted);margin-bottom:18px">Strategic Intelligence Signals (SIS) — early trend detection for Mastercard technology and business decisions. Capture signals 6+ months before they become headlines and use these insights to propose proactive solutions to Mastercard leadership.</p>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px">Strategic Intelligence Signals (SIS) — early trend detection for Mastercard technology and business decisions. Capture signals 6+ months before they become headlines and use these insights to propose proactive solutions to Mastercard leadership.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;padding:14px 16px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:10px;">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-right:4px;">Credibility Rating:</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(231,76,60,.12);color:#E74C3C;border:1px solid rgba(231,76,60,.2);">★☆☆☆☆ Rumour — unverified chatter, treat with caution</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(230,126,34,.12);color:#E67E22;border:1px solid rgba(230,126,34,.2);">★★☆☆☆ Speculative — early signals, plausible but unconfirmed</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(241,196,15,.12);color:#B7950B;border:1px solid rgba(241,196,15,.2);">★★★☆☆ Likely — corroborated by multiple credible sources</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(46,204,113,.12);color:#1E8449;border:1px solid rgba(46,204,113,.2);">★★★★☆ Confirmed Signal — official filing, patent, or statement</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(39,174,96,.2);color:#145A32;border:1px solid rgba(39,174,96,.3);">★★★★★ Official — directly from Mastercard press release or earnings</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-right:4px;">Timeline Urgency:</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(231,76,60,.12);color:#e74c3c;border:1px solid rgba(231,76,60,.2);">🔴 ≤ 3 months — act now, window is closing fast</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(247,158,27,.12);color:#c47a00;border:1px solid rgba(247,158,27,.2);">🟡 4–6 months — prepare proposal in the next 30 days</span>
+          <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(52,152,219,.12);color:#3498DB;border:1px solid rgba(52,152,219,.2);">🔵 7+ months — monitor and plan ahead</span>
+        </div>
+      </div>
       <div class="intel-filter-bar">
         <span style="font-size:12px;color:var(--text-muted);font-weight:700;">🔍 Filter:</span>
         <select id="intelCatFilter" onchange="renderIntel()">
@@ -1033,8 +1057,8 @@ const DAILY_NEWS_DATA = [
   {id:24,
    title:'Mastercard & Thunes Partner to Bring Stablecoin Payouts to 130+ Countries',
    snippet:'Mastercard and Thunes announced a partnership to broaden stablecoin wallet payout capabilities, enabling recipients in over 130 countries to receive funds in stablecoins. The collaboration targets cross-border remittances and reduces currency volatility risks for underserved markets.',
-   content:'Mastercard and Thunes announced a strategic partnership in early March 2026 to expand stablecoin payout capabilities across Thunes\'s global network spanning more than 130 countries. The collaboration integrates Mastercard\'s Multi-Token Network (MTN) infrastructure with Thunes\'s cross-border payment reach.\n\nThe partnership enables senders to initiate payments in traditional currencies while recipients can receive funds in stablecoins via local digital wallets — mitigating currency conversion costs and volatility, particularly beneficial in emerging and underserved markets. This addresses a key barrier to financial inclusion in regions where local currency instability is a challenge.\n\nThe deal extends Mastercard\'s stablecoin ecosystem, which now includes SoFiUSD, USDG (Paxos), PYUSD (PayPal), and FIUSD (Fiserv). Mastercard is systematically building a multi-stablecoin settlement layer to support the $150+ trillion in global payment flows it aims to modernize.',
-   date:'2026-03-04', category:'digital-payments',
+   content:'Mastercard and Thunes announced a strategic partnership on November 13, 2025, at the Singapore Fintech Festival, to expand stablecoin payout capabilities across Thunes\'s global network spanning more than 130 countries. The collaboration integrates Mastercard\'s Multi-Token Network (MTN) infrastructure with Thunes\'s cross-border payment reach.\n\nThe partnership enables senders to initiate payments in traditional currencies while recipients can receive funds in stablecoins via local digital wallets — mitigating currency conversion costs and volatility, particularly beneficial in emerging and underserved markets. This addresses a key barrier to financial inclusion in regions where local currency instability is a challenge.\n\nThe deal extends Mastercard\'s stablecoin ecosystem, which now includes SoFiUSD, USDG (Paxos), PYUSD (PayPal), and FIUSD (Fiserv). Mastercard is systematically building a multi-stablecoin settlement layer to support the $150+ trillion in global payment flows it aims to modernize.',
+   date:'2025-11-13', category:'digital-payments',
    leaders:['Jorn Lambert','Sachin Mehra'],
    tags:['Stablecoins','Thunes','Cross-Border','Financial Inclusion','MTN'],
    url:'https://www.thunes.com/news/mastercard-and-thunes-bring-stablecoin-payouts-to-the-mainstream/',
@@ -1045,7 +1069,7 @@ const DAILY_NEWS_DATA = [
    title:'Recorded Future Annual Report: Organizations Lose $60M on Average to Payment Fraud',
    snippet:'Mastercard\'s Recorded Future released its 2026 Annual Payment Fraud Report showing organizations lost an average of $60 million to payment fraud in the past year, driven by synthetic identity fraud and impersonation scams fueled by generative AI. The report urges fusing cyber and fraud intelligence to stay ahead of increasingly automated attacks.',
    content:'The 2026 Recorded Future Annual Payment Fraud Report — published by Mastercard\'s threat intelligence subsidiary — reveals that organizations lost an average of $60 million to payment fraud over the past 12 months. Synthetic identity fraud and AI-powered impersonation scams were identified as the fastest-growing fraud vectors.\n\nThe report emphasizes that the sophistication and scale of attacks are accelerating due to generative AI, which allows fraudsters to craft convincing phishing attacks, deepfake voice calls, and synthetic financial identities at unprecedented scale. Organizations that fuse cyber threat intelligence with real-time fraud signals — correlating data across fragmented environments — significantly outperformed those using siloed defenses.\n\nThe findings reinforce Mastercard\'s ongoing investments in Recorded Future integration across its Security Services portfolio, including the Threat Intelligence solution launched in October 2025. The report also highlights the partnership with Cloudflare as a model for extending enterprise-grade defenses to small businesses and critical infrastructure.',
-   date:'2026-03-03', category:'cybersecurity',
+   date:'2026-03-02', category:'cybersecurity',
    leaders:['Johan Gerber','Eimear Creaven'],
    tags:['Fraud','Recorded Future','Cybersecurity','AI Fraud','Threat Intelligence'],
    url:'https://www.mastercard.com/us/en/news-and-trends/stories/2026/recorded-future-annual-payment-fraud-report.html',
@@ -1094,7 +1118,7 @@ const DAILY_NEWS_DATA = [
    snippet:'Mastercard and the McLaren Mastercard Formula 1 Team launched Team Priceless, a global fan initiative offering cardholders unprecedented paddock access, hot laps, driver meetings, and curated local Priceless Experiences at five race destinations in the 2026 season.',
    content:'Mastercard and McLaren Racing activated Team Priceless for the 2026 F1 season — a cardholder fan initiative giving papaya fans unparalleled race-day access at five global venues: Melbourne, Miami, the UK, Mexico City, and Abu Dhabi. Selected fans will experience hot laps on track, driver meet-and-greets, and locally curated Priceless Experiences spotlighting each host city\'s culture. The program kicks off at the Australian Grand Prix in Melbourne. Raja Rajamannar, Senior Fellow and former CMO of Mastercard, noted that the Team Priceless experience is central to Mastercard\'s global brand strategy, connecting the McLaren partnership — worth approximately $100 million per season through the mid-2030s — to tangible consumer value.',
    category:'partnerships', leaders:['Raja Rajamannar'],
-   date:'2026-03-01', source:'Mastercard Newsroom / McLaren Racing',
+   date:'2025-12-11', source:'Mastercard Newsroom / McLaren Racing',
    url:'https://www.mastercard.com/us/en/news-and-trends/press/2025/december/mastercard-and-the-mclaren-formula-1-team-launch-team-priceless-.html',
    featured:false, tags:['McLaren','F1','Priceless','Fan Experience']},
 
@@ -1138,7 +1162,7 @@ const DAILY_NEWS_DATA = [
    snippet:'Mastercard introduced Mastercard Agentic Tokens in April 2025, establishing secure credentials for AI assistants and autonomous agents to complete payments on behalf of consumers — integrated with Stripe, Google, Ant International, and PayPal.',
    content:'In April 2025, Mastercard formally launched its Agentic Payments Programme, introducing Mastercard Agentic Tokens — credentials built on the same tokenization infrastructure already powering contactless payments, card-on-file, and payment passkeys.\n\nMastercard announced it was working with Stripe, Google, and Ant International\'s Antom to make secure agentic transactions accessible globally. Mastercard Agent Pay was also integrated into PayPal\'s wallet, giving hundreds of millions of consumers and tens of millions of merchants access to agentic commerce.\n\nChiro Aikat described this as the natural evolution of digital wallets — from storing credentials to acting on behalf of the consumer. Nirav Mehta noted that the token-based architecture ensures every agent transaction is traceable, consumer-authorized, and revocable at any time.',
    category:'agentic-pay', leaders:['Craig Vosburg','Nirav Mehta','Chiro Aikat'],
-   date:'2025-04-15', source:'Mastercard Newsroom', url:'',
+   date:'2025-04-29', source:'Mastercard Newsroom', url:'',
    featured:false, tags:['Agentic Pay','Agent Pay','AI','Tokenization','Verified']},
 
   {id:6,
@@ -1146,7 +1170,7 @@ const DAILY_NEWS_DATA = [
    snippet:'Mastercard announced in November 2024 its vision to eliminate manual card entry and static passwords by 2030, combining tokenization with biometric authentication across all online transactions globally.',
    content:'In November 2024, Mastercard announced plans to reinvent online checkout by 2030 — eliminating manual card number entry and one-time passwords in favour of tokenized, biometric-authenticated payments.\n\nThe initiative rallies banks, merchants, digital wallets, and technology partners globally. Where tokenization is live, approval rates have risen by up to 6%, generating more than $2 billion in additional monthly sales for merchants. Mastercard Payment Passkeys were enabled at over 1,000 merchants in 2025, with Singapore, Malaysia, and Vietnam targeted for full adoption by 2027.\n\nJohan Gerber described the solution as the most significant step toward a passwordless, frictionless payment future. The biometric data is never stored centrally — a privacy-by-design approach championed to comply with GDPR and regional data privacy laws.',
    category:'identity', leaders:['Johan Gerber','Jorn Lambert','Ed McLaughlin'],
-   date:'2024-11-14', source:'Mastercard Newsroom', url:'https://www.mastercard.com/us/en/news-and-trends/press/2024/november/mastercard-reinvents-checkout-with-password-and-number-free-payments.html',
+   date:'2024-11-13', source:'Mastercard Newsroom', url:'https://www.mastercard.com/us/en/news-and-trends/press/2024/november/mastercard-reinvents-checkout-with-password-and-number-free-payments.html',
    featured:false, tags:['Biometrics','Passwordless','Tokenization','2030','Verified']},
 
   {id:10,
@@ -1187,7 +1211,7 @@ const DAILY_NEWS_DATA = [
    snippet:'Mastercard\'s Q4 2025 earnings confirm 46.5 billion switched transactions for the quarter — an average of ~505 million per day — with network revenue jumping 18% as cross-border volumes surge.',
    content:'Mastercard\'s Q4 2025 results reported 46.5 billion switched transactions for the quarter, equating to approximately 505 million transactions processed per day on average (peak holiday days typically 20-30% higher). Network revenue jumped 18% year-on-year, while EPS rose 25%.\n\nEd McLaughlin credited the milestone to a multi-year infrastructure modernisation program. Nirmala Sistla and George Maddaloni\'s teams ensured zero unplanned downtime across all regional data centres during the peak holiday season. Joe Benson\'s infrastructure team maintained sub-100ms authorization times globally throughout peak periods.\n\n⚠️ Correction note: An earlier version of this article incorrectly stated "10 billion transactions in a single day." Mastercard\'s actual daily average is ~500 million. The Q4 2025 quarterly total of 46.5 billion has been verified.',
    category:'core', leaders:['Ed McLaughlin','George Maddaloni','Joe Benson','Nirmala Sistla'],
-   date:'2026-01-30', source:'Mastercard Q4 2025 Earnings', url:'',
+   date:'2026-01-29', source:'Mastercard Q4 2025 Earnings', url:'',
    featured:false, tags:['Network','Infrastructure','Earnings','Q4 2025','Corrected']},
 
   {id:8,
@@ -1211,7 +1235,7 @@ const DAILY_NEWS_DATA = [
    snippet:'Mastercard introduced its first-ever Threat Intelligence solution in October 2025, using real-time network intelligence to identify compromised merchant sites and fraud infrastructure before attacks reach cardholders.',
    content:'In October 2025, Mastercard introduced its first-ever Threat Intelligence solution, a proactive fraud prevention tool that uses real-time network intelligence to identify compromised merchant websites and fraud infrastructure.\n\nIn a six-month market test, Mastercard\'s ecosystem partners identified and took down 9,500 infected merchant websites linked to an estimated $120 million in fraud losses. The solution monitors the dark web, phishing infrastructure, and suspicious domains continuously.\n\nEimear Creaven highlighted that financial crime tactics are evolving rapidly, but Mastercard\'s threat intelligence network, which covers the majority of global card transactions, gives unprecedented visibility. Johan Gerber confirmed plans to expand the Security Services portfolio with new identity-based fraud prevention tools.\n\n⚠️ Note: The "$40 billion blocked" figure cited in an earlier draft was not verified. The confirmed figure from Mastercard\'s October 2025 announcement is $120 million in identified fraud during the six-month pilot.',
    category:'security-services', leaders:['Johan Gerber','Eimear Creaven'],
-   date:'2025-10-28', source:'Mastercard Newsroom', url:'https://www.mastercard.com/us/en/news-and-trends/press/2025/october/Mastercard-introduces-first-ever-threat-intelligence-solution.html',
+   date:'2025-10-27', source:'Mastercard Newsroom', url:'https://www.mastercard.com/us/en/news-and-trends/press/2025/october/Mastercard-introduces-first-ever-threat-intelligence-solution.html',
    featured:false, tags:['Security','Threat Intelligence','Fraud Prevention','Cybersecurity']},
 
   {id:12,
@@ -1275,7 +1299,7 @@ function init() {
   if (st === 'light') { isDark = false; document.documentElement.setAttribute('data-theme','light'); document.getElementById('themeBtn').textContent='☀️'; }
 
   document.getElementById('hdrDate').textContent = new Date().toLocaleDateString('en-US',{weekday:'short',year:'numeric',month:'short',day:'numeric'});
-  document.getElementById('hdrVersion').textContent = 'v2026-03-09.4';
+  document.getElementById('hdrVersion').textContent = 'v2026-03-10.1';
 
   // Populate category selects (article form + bet form)
   const cs = document.getElementById('inCategory');
